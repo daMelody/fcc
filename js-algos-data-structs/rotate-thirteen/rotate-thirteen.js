@@ -2,7 +2,7 @@
 
 function rot13(str) {
 	// make REGEX for alphabetic chars
-	var regex = /a-z/ig;
+	var regex = /[a-z]/ig;
 	// make cipher accumulator
 	var cipher = "";
 
@@ -10,7 +10,7 @@ function rot13(str) {
 	for (var i=0; i<str.length; i++) {
 		var ch = str[i];	
 		// check CH against REGEX
-		if (ch..match(regex)) {
+		if (ch.match(regex)) {
 			// get ASCII code
 			var ascii = str.charCodeAt(i);
 			// if CH+13 is valid
