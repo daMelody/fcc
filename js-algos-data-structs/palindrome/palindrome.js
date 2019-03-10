@@ -7,7 +7,7 @@ function palindrome(str) {
   // build NEWSTRING of proper chars
   var newString = "";
   for (var i=0; i<str.length; i++) {
-    if (regex.test(str[i])) {
+   if (str[i].test(regex)) {
       newString = newString + str[i];  
     }
   }
