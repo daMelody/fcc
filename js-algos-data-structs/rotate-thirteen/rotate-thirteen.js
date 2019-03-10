@@ -10,12 +10,16 @@ function rot13(str) {
 	for (var i=0; i<str.length; i++) {
 		var ch = str[i];	
 		// check CH against REGEX
-		if (ch[i].match(regex)) {
-			// if CH+13 results in wrapping around
-			if (ch+13 < 90) {
-				ch = ch - 13;
+		if (ch..match(regex)) {
+			// get ASCII code
+			var ascii = str.charCodeAt(i);
+			// if CH+13 is valid
+			if (ascii+13 <= 90) {
+				ascii = ascii + 13;
+				ch = String.fromCharCode(ascii);
 			} else {
-				ch = ch + 13;
+				ascii = ascii - 13;
+				ch = String.fromCharCode(ascii);
 			}
 		}
 		
