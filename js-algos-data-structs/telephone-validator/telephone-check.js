@@ -1,29 +1,47 @@
 // Telephone Number Validator challenge from FreeCodeCamp
 
 function telephoneCheck(str) {
-	// make REGEX for numbers
-	var regex = /[0-9]/;
-	// make simplified number
-	var simpleNum = "";
+  var regexDigits = /\d/;
+  var regexIllegal = /[!@#$%^&*=+<>?/.,;:]/;
+  
+  // check proper parens placement
+  var lParen = str.indexOf('(');
+  var rParen = str.indexOf(')');
 
-	// apply REGEX to STR
-	for (var i=0; i<str.length; i++) {
-		if (str[i].match(regex)) {
-				simpleNum = simpleNum + str[i];
-		} else if (str[i] != "(" || str[i] != ")") {
-				return false;
-		}
-	}
+  parens: if (lParen > -1 || rParen > -1) {    
+      if (lParen === 0 && rParen === 4) {
+          break parens;
+      } else if (lParen === 1 && rParen === 5) {
+          break parens;;
+      } else if (lParen === 2 && rParen === 6) {
+          break parens;
+      } // NOT 0 && 4, NOT 1 && 5, NOT 2 && 6
+      else if ((lParen != 0 && rParen != 4) ||
+          (lParen != 1 && rParen != 5) ||
+          (lParen != 2 && rParen != 6)) {
+              return false;
+      }
+  }
 
-	// check length of SIMPLE-NUM
-	var numLength = simpleNum.length;
+  // build DIGITS string
+  var digits = "";
+  for (var i=0; i<str.length; i++) {
+    // illegal characters
+    if (str[i].match(regexIllegal)) {
+        return false;
+    }
+    // add only digits to string
+    if (str[i].match(regexDigits)) {
+      digits = digits + str[i];
+    }
+  }
 
-	// if NUM-LENGTH==11, check country code
-	if (numLength === 11 && simpleNum[0] === 1) {
-			return true;
-	} else if (numLength === 10) {
-			return true;
-	} else {
-			return false;
-	}
+  // check size of DIGITS
+  if (digits.length < 10 || digits.length > 11) {
+      return false;
+  } else if (digits.length === 11 && digits[0] != '1') {
+      return false;
+  }
+
+  return true;
 }
