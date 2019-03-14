@@ -1,4 +1,4 @@
-// Roman Numeral Converter challenge from FCC
+// Roman Numeral Converter challenge from FreeCodeCamp
 
 function convertToRoman(num) {
   var roman = "";
@@ -45,7 +45,7 @@ function convertToRoman(num) {
 			roman = roman + "I";
 			num = num - 1;
 		}
-  }    
+  }
   // return ROMAN string value
   return roman;
 }

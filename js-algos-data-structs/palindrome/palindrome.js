@@ -1,4 +1,4 @@
-// Palindrome Checker challenge from FCC
+// Palindrome Checker challenge from FreeCodeCamp
 
 function palindrome(str) {
   // use REGEX to keep alphanumeric characters
@@ -8,7 +8,7 @@ function palindrome(str) {
   var newString = "";
   for (var i=0; i<str.length; i++) {
    if (str[i].test(regex)) {
-      newString = newString + str[i];  
+      newString = newString + str[i];
     }
   }
 
