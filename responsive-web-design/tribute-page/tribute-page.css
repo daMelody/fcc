@@ -1,0 +1,17 @@
+body {
+  background-color: lightblue;
+}
+
+#title, #poem, #link, #img-caption {
+  text-align: center;
+}
+
+#for-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#info {
+  width: 600px;
+}
