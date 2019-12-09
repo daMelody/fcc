@@ -58,9 +58,8 @@ form {
 input, button {
     padding: 5px;
     border-radius: 15px;
-    background-color: lightslategray;
     border-color: tan;
-    color: white;
+    color: brown;
 }
 
 
