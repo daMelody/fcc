@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    background-color: burlywood;
+}
+
+#navbar {
+    position: fixed;
+    margin-top: 0px;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+}
+
+#welcome-section {
+    height: 100vh;
+    width: 100vh;
+}
+
+#welcome-text {
+}
+
+#project-container {
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "1 2 3";
+    justify-content: space-around;
+    align-items: center;
+}
+
+.project-tile {
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    padding: 10px;
+    background-color: cornflowerblue;
+    border-radius: 25px;
+}
+
+.project-tile img {
+    max-width: 200px;
+    border-radius: 100%;
+}
